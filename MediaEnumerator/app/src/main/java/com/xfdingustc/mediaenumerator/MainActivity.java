@@ -5,12 +5,30 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
+
+    @OnClick(R.id.btnVideo)
+    public void onBtnVideoClicked() {
+        BrowseVideoActivity.launch(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
+
+    }
+
+    private void init() {
+        initViews();
+    }
+
+    private void initViews() {
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
     }
 
     @Override
