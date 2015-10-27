@@ -1,13 +1,18 @@
 package com.xfdingustc.mediaenumerator_sample;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -35,7 +40,14 @@ public class VideoClipRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        ContentResolver contentResolver = mContext.getContentResolver();
 
+        VideoClip videoClip = mVideoClipList.get(position);
+        Bitmap bitmap = MediaStore.Video.Thumbnails.getThumbnail(contentResolver, videoClip.getId(),
+            MediaStore.Images.Thumbnails.MINI_KIND, null);
+
+        VideoClipRvViewHolder viewHolder = (VideoClipRvViewHolder)holder;
+        viewHolder.mIvVideoThumbnail.setImageBitmap(bitmap);
     }
 
     @Override
@@ -46,6 +58,9 @@ public class VideoClipRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
 
     public class VideoClipRvViewHolder extends RecyclerView.ViewHolder {
+
+        @Bind(R.id.ivVideoThumbnail)
+        ImageView mIvVideoThumbnail;
 
         public VideoClipRvViewHolder(View itemView) {
             super(itemView);

@@ -1,8 +1,10 @@
 package com.xfdingustc.mediaenumerator_sample;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +20,8 @@ import butterknife.ButterKnife;
  */
 public class BrowseVideoActivity extends AppCompatActivity {
     private static final String TAG = BrowseVideoActivity.class.getSimpleName();
+
+    private VideoClipRvAdapter mVideoClipRvAdapter;
 
     @Bind(R.id.rvVideoList)
     RecyclerView mRvVideoList;
@@ -48,9 +52,17 @@ public class BrowseVideoActivity extends AppCompatActivity {
         VideoClipEnumerator enumerator = new VideoClipEnumerator(this);
         List<VideoClip> videoClips = (List<VideoClip>)enumerator.enumerate();
 
+        mVideoClipRvAdapter = new VideoClipRvAdapter(this);
+        mRvVideoList.setAdapter(mVideoClipRvAdapter);
+
+        mVideoClipRvAdapter.setVideoClipList(videoClips);
+
         for (VideoClip videoClip : videoClips) {
-            Log.d(TAG, videoClip.getPath());
+            Log.d(TAG, "Video id: " + videoClip.getId());
+
         }
+
+
 
     }
 }
