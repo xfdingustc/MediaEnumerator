@@ -1,41 +1,43 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 /**
  * Created by Xiaofei on 2015/10/27.
  */
-public class VideoClip {
+public class AudioClip {
     private int id;
     private String title;
     private String album;
     private String artist;
+    private String path;
     private String displayName;
     private String mimeType;
-    private String path;
-    private long size;
     private long duration;
+    private long size;
 
     /**
      *
      */
-    public VideoClip() {
+    public AudioClip() {
         super();
     }
 
 
-    public VideoClip(int id, String title, String album, String artist,
-                 String displayName, String mimeType, String path, long size,
-                 long duration) {
+    public AudioClip(int id, String title, String album, String artist,
+                 String path, String displayName, String mimeType, long duration,
+                 long size) {
         super();
         this.id = id;
         this.title = title;
         this.album = album;
         this.artist = artist;
+        this.path = path;
         this.displayName = displayName;
         this.mimeType = mimeType;
-        this.path = path;
-        this.size = size;
         this.duration = duration;
+        this.size = size;
     }
+
+
 
     public int getId() {
         return id;
@@ -69,6 +71,14 @@ public class VideoClip {
         this.artist = artist;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     public String getDisplayName() {
         return displayName;
     }
@@ -85,12 +95,12 @@ public class VideoClip {
         this.mimeType = mimeType;
     }
 
-    public String getPath() {
-        return path;
+    public long getDuration() {
+        return duration;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 
     public long getSize() {
@@ -99,13 +109,5 @@ public class VideoClip {
 
     public void setSize(long size) {
         this.size = size;
-    }
-
-    public long getDuration() {
-        return duration;
-    }
-
-    public void setDuration(long duration) {
-        this.duration = duration;
     }
 }

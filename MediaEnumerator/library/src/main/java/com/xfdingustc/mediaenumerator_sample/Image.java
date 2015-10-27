@@ -1,4 +1,4 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 /**
  * Created by Xiaofei on 2015/10/27.

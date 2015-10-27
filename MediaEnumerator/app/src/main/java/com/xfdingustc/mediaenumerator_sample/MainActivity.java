@@ -1,4 +1,4 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

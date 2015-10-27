@@ -1,4 +1,4 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -10,15 +10,15 @@ import java.util.List;
 /**
  * Created by Xiaofei on 2015/10/27.
  */
-public class VideoClipProvider implements IMediaProvider {
+public class VideoClipEnumerator implements IMediaEnumerator {
     private Context context;
 
-    public VideoClipProvider(Context context) {
+    public VideoClipEnumerator(Context context) {
         this.context = context;
     }
 
     @Override
-    public List<?> getList() {
+    public List<?> enumerate() {
         List<VideoClip> list = null;
         if (context != null) {
             Cursor cursor = context.getContentResolver().query(

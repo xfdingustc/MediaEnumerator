@@ -1,43 +1,41 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 /**
  * Created by Xiaofei on 2015/10/27.
  */
-public class AudioClip {
+public class VideoClip {
     private int id;
     private String title;
     private String album;
     private String artist;
-    private String path;
     private String displayName;
     private String mimeType;
-    private long duration;
+    private String path;
     private long size;
+    private long duration;
 
     /**
      *
      */
-    public AudioClip() {
+    public VideoClip() {
         super();
     }
 
 
-    public AudioClip(int id, String title, String album, String artist,
-                 String path, String displayName, String mimeType, long duration,
-                 long size) {
+    public VideoClip(int id, String title, String album, String artist,
+                 String displayName, String mimeType, String path, long size,
+                 long duration) {
         super();
         this.id = id;
         this.title = title;
         this.album = album;
         this.artist = artist;
-        this.path = path;
         this.displayName = displayName;
         this.mimeType = mimeType;
-        this.duration = duration;
+        this.path = path;
         this.size = size;
+        this.duration = duration;
     }
-
-
 
     public int getId() {
         return id;
@@ -71,14 +69,6 @@ public class AudioClip {
         this.artist = artist;
     }
 
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
     public String getDisplayName() {
         return displayName;
     }
@@ -95,12 +85,12 @@ public class AudioClip {
         this.mimeType = mimeType;
     }
 
-    public long getDuration() {
-        return duration;
+    public String getPath() {
+        return path;
     }
 
-    public void setDuration(long duration) {
-        this.duration = duration;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public long getSize() {
@@ -109,5 +99,13 @@ public class AudioClip {
 
     public void setSize(long size) {
         this.size = size;
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
     }
 }

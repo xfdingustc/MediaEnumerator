@@ -1,4 +1,4 @@
-package com.xfdingustc.mediaenumerator;
+package com.xfdingustc.mediaenumerator_sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
