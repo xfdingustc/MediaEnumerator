@@ -1,9 +1,11 @@
 package com.xfdingustc.mediaenumerator_sample;
 
+import java.io.Serializable;
+
 /**
  * Created by Xiaofei on 2015/10/27.
  */
-public class Image {
+public class Image implements Serializable {
     private int id;
     private String title;
     private String displayName;
