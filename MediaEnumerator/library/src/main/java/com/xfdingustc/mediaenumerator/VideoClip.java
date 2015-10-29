@@ -1,4 +1,4 @@
-package com.xfdingustc.mediaenumerator_sample;
+package com.xfdingustc.mediaenumerator;
 
 import java.io.Serializable;
 

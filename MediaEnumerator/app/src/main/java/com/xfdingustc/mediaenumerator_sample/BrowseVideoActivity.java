@@ -10,6 +10,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.xfdingustc.mediaenumerator.VideoClip;
+import com.xfdingustc.mediaenumerator.VideoClipEnumerator;
+
 import java.util.List;
 
 import butterknife.Bind;
